@@ -18,7 +18,7 @@
             <select data-type="hotel" id="hotel-choices">
             <option> </option>
             {% for hotel in hotels %}
-             <option data-hotelId = "{{hotel.id}}" data-lat="{{hotel.place.location[0]}}" data-lon="{{hotel.place.location[1]}}">
+             <option data-hotelid = "{{hotel.id}}" data-lat="{{hotel.place.location[0]}}" data-lon="{{hotel.place.location[1]}}">
                 {{ hotel.name }}
               </option>
             {% endfor %}

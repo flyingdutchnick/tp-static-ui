@@ -41,7 +41,7 @@ $(document).on('ready', function() {
 
     $hotelSelect.change(function() {
         $hotelLat = $('#hotel-choices option:selected').attr('data-lat');
-        $hotelId = $('#hotel-choices option:selected').attr('data-hotelId');
+        $hotelId = $('#hotel-choices option:selected').attr('data-hotelid');
         $hotelLong = $('#hotel-choices option:selected').attr('data-lon');
     });
 
