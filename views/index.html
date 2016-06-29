@@ -16,8 +16,9 @@
           <div>
             <h4>Hotels</h4>
             <select data-type="hotel" id="hotel-choices">
+            <option> </option>
             {% for hotel in hotels %}
-             <option data-lat="{{hotel.place.location[0]}}" data-lon="{{hotel.place.location[0]}}">
+             <option data-lat="{{hotel.place.location[0]}}" data-lon="{{hotel.place.location[1]}}">
                 {{ hotel.name }}
               </option>
             {% endfor %}
@@ -27,6 +28,7 @@
           <div>
             <h4>Restaurants</h4>
             <select data-type="restaurant" id="restaurant-choices">
+            <option> </option>
             {% for restaurant in restaurants %}
               <option data-lat="{{restaurant.place.location[0]}}" data-lon="{{restaurant.place.location[1]}}">
                 {{ restaurant.name }}
@@ -38,8 +40,9 @@
           <div>
             <h4>Activities</h4>
             <select data-type="activity" id="activity-choices">
+            <option> </option>
             {% for activity in activities %}
-              <option data-lat="{{activity.place.location[0]}}" data-lon="{{activity.place.location[0]}}">
+              <option data-lat="{{activity.place.location[0]}}" data-lon="{{activity.place.location[1]}}">
                 {{ activity.name }}
               </option>
             {% endfor %}
