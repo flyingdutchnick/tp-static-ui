@@ -16,7 +16,7 @@ $(document).on('ready', function() {
     var $actLat;
     var $actLong;
 
-
+    var $addSelect = $('#day-add');
     var $itinerary = $('#itinerary').find('.list-group');
 
     var deleteMarker = function(id){
@@ -62,7 +62,6 @@ $(document).on('ready', function() {
         if ($hotelSelect.val() !== "") {
             $itinerary.first().append('<div class="itinerary-item"><span class="title" data-hotelid="' + $hotelId+ '">' + $hotelSelect.val() + '<button class="btn btn-xs btn-danger remove btn-circle">x</button>');
             drawMarker('hotel', [$hotelLat, $hotelLong], $hotelId);
-            console.log(markers);
         }
     });
 
@@ -81,8 +80,14 @@ $(document).on('ready', function() {
         }
     })
 
+    // add button functionality
+    $addSelect.on('click', function(event) {
+        var dayNumber = parseInt($(this).prev().text())+1 || 1; 
+        $(this).before("<button class='btn btn-circle day-btn'>"+dayNumber+"</button>");
+    })
 
 
+    // remove functionality
     $itinerary.on('click', 'div', function(event) {
         //marker.idsetmAp(null)
         var searchKey = Object.keys($(this).children().data()).toString();
