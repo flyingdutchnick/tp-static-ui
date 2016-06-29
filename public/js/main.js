@@ -1,6 +1,7 @@
 var iconURLs;
 var currentMap;
 var drawMarker;
+var markers = [];
 
 $(function initializeMap (){
 
@@ -50,13 +51,16 @@ $(function initializeMap (){
     activity: '/images/star-3.png'
   };
 
-  drawMarker = function (type, coords) {
+
+  drawMarker = function (type, coords, venueId) {
     var latLng = new google.maps.LatLng(coords[0], coords[1]);
     var iconURL = iconURLs[type];
     var marker = new google.maps.Marker({
       icon: iconURL,
-      position: latLng
+      position: latLng,
+      venueId: venueId
     });
+    markers.push(marker);
     marker.setMap(currentMap);
   }
 
